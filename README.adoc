@@ -1,9 +1,9 @@
-= Ultrasonic Library for Arduino =
+= Ultrasonic Sensor Library for Arduino =
 
-This library allows an Arduino board to control Ultrasonics.
+This library allows an Arduino board to control Ultrasonic sensors.
 
 For more information about this library please visit it at
-https://github.com/gmarty2000/arduino-ULTRASONIC/wiki
+https://github.com/gmarty2000/arduino-ULTRASONIC_SENSOR/wiki
 
 == License ==
 
