@@ -1,10 +1,10 @@
-#ifndef __ULTRASONIC_h
-#define __ULTRASONIC_h
+#ifndef __ULTRASONIC_SENSOR_h
+#define __ULTRASONIC_SENSOR_h
 
 #include "Arduino.h"
 
-class Ultrasonic {
-    public:     Ultrasonic(int, int);
+class UltrasonicSensor {
+    public:     UltrasonicSensor(int, int);
                 float getTemperature();
                 void setTemperature(float);
                 int distanceInMicroseconds();
