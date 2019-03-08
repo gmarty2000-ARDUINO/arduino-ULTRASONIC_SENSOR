@@ -5,9 +5,9 @@
 
 class Ultrasonic {
     public:     Ultrasonic(int, int);
-                int distanceInMicroseconds();
                 float getTemperature();
                 void setTemperature(float);
+                int distanceInMicroseconds();
                 int distanceInCentimeters();
                 int distanceInMillimeters();
                 String toString();
