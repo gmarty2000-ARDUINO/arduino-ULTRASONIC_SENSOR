@@ -1,7 +1,9 @@
 Ultrasonic	KEYWORD1
 
+
+getTemperature	KEYWORD2
+setTemperature	KEYWORD2
 distanceInMicroseconds	KEYWORD2
-distanceInMeters	KEYWORD2
 distanceInCentimeters	KEYWORD2
 distanceInMillimeters	KEYWORD2
 
