@@ -1,9 +1,9 @@
-#include "Ultrasonic.h"
+#include "UltrasonicSensor.h"
 
 /* ------------------------------ CONSTRUCTOR CODE ------------------------------ */
 
 /* Constructor - It saves the pin numbers of the Ultrasonic sensor and set them in OUTPUT and INPUT mode */
-Ultrasonic::Ultrasonic(int trigger, int echo) {
+UltrasonicSensor::UltrasonicSensor(int trigger, int echo) {
     this->pinTrigger = trigger;
     this->pinEcho = echo;
     this->temperature = 20.0f;
@@ -17,7 +17,7 @@ Ultrasonic::Ultrasonic(int trigger, int echo) {
 /* ------------------------------ SIMPLE APIs ------------------------------ */
 
 /* Method - It returns the distance in microseconds */
-int Ultrasonic::distanceInMicroseconds() {
+int UltrasonicSensor::distanceInMicroseconds() {
     digitalWrite(this->pinTrigger, HIGH);
     delayMicroseconds(10);
     digitalWrite(this->pinTrigger, LOW);
@@ -26,19 +26,19 @@ int Ultrasonic::distanceInMicroseconds() {
 }
 
 /* Method - It returns the external temperature */
-float Ultrasonic::getTemperature() {
+float UltrasonicSensor::getTemperature() {
     return this->temperature;
 }
 
 /* Method - It sets the external temperature */
-void Ultrasonic::setTemperature(float temperature) {
+void UltrasonicSensor::setTemperature(float temperature) {
     this->temperature = temperature;
 }
 
 /* ------------------------------ OTHER FUNCTIONS ------------------------------ */
 
 /* Method - It returns the distance in centimeters */
-int Ultrasonic::distanceInCentimeters() {
+int UltrasonicSensor::distanceInCentimeters() {
     double reciprocalVelocity = 10000 / (331.45 + (0.62 * this->temperature));  //  reciprocalVelocity = 1 / velocity
     int duration = this->distanceInMicroseconds();
     int centimeters = (duration / reciprocalVelocity);                          //  space   = duration * velocity =
@@ -48,7 +48,7 @@ int Ultrasonic::distanceInCentimeters() {
 }
 
 /* Method - It returns the distance in millimeters */
-int Ultrasonic::distanceInMillimeters() {
+int UltrasonicSensor::distanceInMillimeters() {
     double reciprocalVelocity = 1000 / (331.45 + (0.62 * this->temperature));  //  reciprocalVelocity = 1 / velocity
     int duration = this->distanceInMicroseconds();
     int millimeters = (duration / reciprocalVelocity);                          //  space   = duration * velocity =
@@ -58,7 +58,7 @@ int Ultrasonic::distanceInMillimeters() {
 }
 
 /* Method - It returns the Ultrasonic informations */
-String Ultrasonic::toString() {
+String UltrasonicSensor::toString() {
     String ret = String("Ultrasonic: {");
     ret.concat("pinTrigger=");
     ret.concat(this->pinTrigger);
