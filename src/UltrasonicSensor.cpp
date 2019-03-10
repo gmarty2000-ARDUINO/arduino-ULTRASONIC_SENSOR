@@ -57,7 +57,13 @@ int UltrasonicSensor::distanceInMillimeters() {
     return millimeters;
 }
 
-/* Method - It returns the Ultrasonic informations */
+/* Method - It calibrates the Ultrasonic sensor */
+void UltrasonicSensor::calibration(int realDistance) {
+    double velocity = (((double) realDistance) / this->distanceInMicroseconds()) * 10000;
+    this->setTemperature((velocity - 331.45) / 0.62);
+}
+
+/* Method - It returns the UltrasonicSensor informations */
 String UltrasonicSensor::toString() {
     String ret = String("Ultrasonic: {");
     ret.concat("pinTrigger=");

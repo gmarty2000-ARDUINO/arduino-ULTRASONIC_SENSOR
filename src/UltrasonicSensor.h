@@ -10,6 +10,7 @@ class UltrasonicSensor {
                 int distanceInMicroseconds();
                 int distanceInCentimeters();
                 int distanceInMillimeters();
+                void calibration(int);
                 String toString();
     private:    int pinTrigger;
                 int pinEcho;
