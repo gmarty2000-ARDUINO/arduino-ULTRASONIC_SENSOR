@@ -1,4 +1,4 @@
-Ultrasonic	KEYWORD1
+UltrasonicSensor	KEYWORD1
 
 getTemperature	KEYWORD2
 setTemperature	KEYWORD2
